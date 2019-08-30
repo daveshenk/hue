@@ -5,9 +5,10 @@ require 'curb'
 module Hue
   class Client
     attr_reader :username
+    attr_reader :bridge_id
 
-    def initialize(username = nil)
-      @bridge_id = nil
+    def initialize(username = nil, bridge_id = nil)
+      @bridge_id = bridge_id
       @username = username || find_username
 
       if @username
